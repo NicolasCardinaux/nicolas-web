@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/sistemadefocodigital", "destination": "/" },
-    { "source": "/sistemadefocodigital/(.*)", "destination": "/$1" }
-  ]
-}
