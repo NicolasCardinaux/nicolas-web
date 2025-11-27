@@ -67,7 +67,7 @@ a {
     padding: 0 20px; 
 }
 
-/* Top Bar - Más urgencia */
+
 .top-bar {
     background: var(--gradient-glow); 
     color: white; 
@@ -95,7 +95,7 @@ a {
     100% { transform: translateX(100%); }
 }
 
-/* Hero Section - Más impacto */
+
 .hero { 
     padding: 100px 0 80px; 
     position: relative; 
@@ -236,7 +236,7 @@ h1 {
     color: var(--text-muted);
 }
 
-/* Hero Visual */
+
 .hero-visual { 
     position: relative; 
     display: flex;
@@ -380,18 +380,17 @@ h1 {
     font-weight: 700;
     font-size: 1.1rem;
     flex-shrink: 0;
-    overflow: hidden; /* Importante para que la imagen se recorte circular */
-    border: 2px solid var(--primary); /* Borde opcional para mejor visibilidad */
+    overflow: hidden; 
+    border: 2px solid var(--primary); 
 }
 
 .avatar-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Para que la imagen cubra todo el círculo */
+    object-fit: cover;
     border-radius: 50%;
 }
 
-/* Para el avatar pequeño del comentario flotante */
 .user-avatar {
     width: 25px;
     height: 25px;
@@ -418,7 +417,7 @@ h1 {
     50% { transform: translateY(-15px); }
 }
 
-/* Logos Section */
+
 .logos-section {
     padding: 40px 0;
     background: rgba(15, 23, 42, 0.3);
@@ -456,7 +455,7 @@ h1 {
     font-size: 1.2rem;
 }
 
-/* Pain Section */
+
 .pain { 
     padding: 100px 0; 
 }
@@ -575,7 +574,6 @@ h1 {
     border: 1px solid rgba(59,130,246,0.2);
 }
 
-/* Value Prop - MEJORADO */
 .value-prop { 
     padding: 100px 0; 
     background: #0a0b0e; 
@@ -733,7 +731,7 @@ h1 {
     color: var(--text-muted);
 }
 
-/* Modules - MEJORADO */
+
 .modules { 
     padding: 100px 0; 
 }
@@ -842,7 +840,7 @@ h1 {
     white-space: nowrap;
 }
 
-/* Testimonials - MEJORADO */
+
 .testimonials {
     padding: 100px 0;
     background: #0a0b0e;
@@ -947,7 +945,7 @@ h1 {
 
 
 
-/* Offer Section */
+
 .offer { 
     padding: 100px 0; 
     position: relative;
@@ -1160,7 +1158,7 @@ h1 {
     font-weight: 700;
 }
 
-/* Author Bio - MEJORADO */
+
 .author-bio {
     padding: 100px 0;
     background: #0a0b0e;
@@ -1247,7 +1245,7 @@ h1 {
     margin-top: 20px;
 }
 
-/* FAQ */
+
 .faq {
     padding: 100px 0;
 }
@@ -1313,7 +1311,7 @@ h1 {
     color: var(--accent);
 }
 
-/* Footer */
+
 footer {
     padding: 60px 0 30px;
     border-top: 1px solid var(--border);
@@ -1356,7 +1354,7 @@ footer {
     color: var(--accent);
 }
 
-/* Sticky Mobile CTA */
+
 .sticky-mobile {
     position: fixed;
     bottom: 0;
@@ -1395,7 +1393,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
     .value-grid {
         gap: 50px;
@@ -1407,11 +1405,10 @@ footer {
     }
 }
 
-/* ===== MEDIA QUERIES RESPONSIVE - MÓVIL ===== */
-/* ===== MEDIA QUERIES RESPONSIVE CONSOLIDADAS ===== */
+
 
 @media (max-width: 768px) {
-    /* Ajustes generales */
+
     body {
         font-size: 14px;
         line-height: 1.5;
@@ -1422,13 +1419,13 @@ footer {
         padding: 0 15px;
     }
     
-    /* Top Bar */
+ 
     .top-bar {
         font-size: 0.8rem;
         padding: 10px;
     }
     
-    /* Hero Section */
+
     .hero {
         padding: 60px 0 30px;
     }
@@ -1471,7 +1468,7 @@ footer {
         margin-bottom: 20px;
     }
     
-    /* Urgency box centrado */
+
     .urgency-box {
         flex-direction: column;
         gap: 10px;
@@ -1485,7 +1482,7 @@ footer {
         justify-content: center;
     }
     
-    /* CTA Group */
+
     .hero-cta-group {
         margin-top: 30px;
         padding: 0 10px;
@@ -1515,7 +1512,7 @@ footer {
         line-height: 1.4;
     }
     
-    /* Hero Visual Elements */
+
     .floating-elements {
         display: block !important;
     }
@@ -1583,7 +1580,7 @@ footer {
         line-height: 1.3;
     }
     
-    /* Logos Section */
+
     .logos-row {
         gap: 20px;
         flex-wrap: wrap;
@@ -1593,7 +1590,7 @@ footer {
         font-size: 0.8rem;
     }
     
-    /* Section Titles */
+
     .section-title {
         font-size: 1.8rem;
         padding: 0 10px;
@@ -1604,7 +1601,7 @@ footer {
         padding: 0 10px;
     }
     
-    /* Pain Section */
+
     .pain {
         padding: 60px 0;
     }
@@ -1618,7 +1615,7 @@ footer {
         padding: 20px;
     }
     
-    /* Value Prop Section */
+
     .value-prop {
         padding: 60px 0;
     }
@@ -1670,7 +1667,7 @@ footer {
         text-align: center;
     }
     
-    /* Mockup overlay */
+
     .mockup-overlay {
         position: absolute !important;
         bottom: 20px !important;
@@ -1693,7 +1690,7 @@ footer {
         margin-bottom: 0;
     }
     
-    /* Modules Section */
+
     .modules {
         padding: 60px 0;
     }
@@ -1723,7 +1720,7 @@ footer {
         font-size: 0.8rem;
     }
     
-    /* Testimonials Section */
+
     .testimonials {
         padding: 60px 0;
     }
@@ -1748,7 +1745,7 @@ footer {
     }
     
 
-    /* Offer Section */
+
     .offer {
         padding: 60px 0;
     }
@@ -1770,7 +1767,7 @@ footer {
         font-size: 2rem;
     }
     
-    /* Security badges centrados */
+
     .security-badges {
         flex-direction: column;
         gap: 10px;
@@ -1783,7 +1780,7 @@ footer {
         justify-content: center;
     }
     
-    /* Author Bio */
+
     .author-bio {
         padding: 60px 0;
     }
@@ -1800,7 +1797,7 @@ footer {
         gap: 15px;
     }
     
-    /* FAQ Section */
+
     .faq {
         padding: 60px 0;
     }
@@ -1810,7 +1807,7 @@ footer {
         font-size: 1rem;
     }
     
-    /* Footer */
+
     footer {
         padding: 40px 0 20px;
     }
@@ -1835,7 +1832,7 @@ footer {
         order: 1;
     }
     
-    /* Sticky Mobile - Botón final */
+
     .sticky-mobile {
         display: flex;
         padding: 10px 15px;
@@ -1885,7 +1882,7 @@ footer {
         font-size: 0.85rem !important;
     }
     
-    /* Textos que no se salgan */
+
     .section-title,
     .section-subtitle,
     .hero-sub,
@@ -2040,10 +2037,9 @@ footer {
         margin-top: 15px;
     }
 }
-/* ===== MEDIA QUERIES - AJUSTES FINALES ===== */
+
 
 @media (max-width: 768px) {
-    /* Testimonials - Mover badge al lado del nombre */
     .testimonial-footer {
         flex-direction: row !important;
         justify-content: space-between;
@@ -2061,7 +2057,7 @@ footer {
         flex: 1;
     }
     
-    /* Footer - Invertir orden */
+
     .footer-bottom {
         flex-direction: column;
         gap: 15px;
@@ -2078,7 +2074,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    /* Testimonials - Ajustar para móviles pequeños */
     .testimonial-footer {
         flex-direction: column !important;
         align-items: flex-start;
@@ -2089,7 +2084,6 @@ footer {
         align-self: flex-start;
     }
     
-    /* Footer - Ajustes para móviles pequeños */
     .footer-bottom {
         gap: 12px;
     }
@@ -2099,10 +2093,9 @@ footer {
     }
 }
 
-/* ===== MEDIA QUERIES - AJUSTES CORREGIDOS TESTIMONIOS ===== */
+
 
 @media (max-width: 768px) {
-    /* Testimonials - Solo mover el badge a la derecha sin modificar el user-info */
     .testimonial-footer {
         flex-direction: row !important;
         justify-content: space-between;
@@ -2111,24 +2104,23 @@ footer {
     }
     
     .user-info {
-        flex: 0 1 auto; /* No forzar que ocupe todo el espacio */
+        flex: 0 1 auto; 
         display: flex;
         align-items: center;
         gap: 12px;
-        /* Mantener la estructura original */
     }
     
     .testimonial-badge {
         margin-top: 0 !important;
         align-self: flex-start;
         white-space: nowrap;
-        flex-shrink: 0; /* Evitar que se reduzca */
-        margin-left: auto; /* Empujar a la derecha */
+        flex-shrink: 0; 
+        margin-left: auto; 
     }
     
-    /* Mantener la estructura original del user-info */
+
     .user-info div {
-        display: block; /* Mantener bloque original */
+        display: block; 
     }
     
     .user-info div strong {
@@ -2165,10 +2157,8 @@ footer {
     }
 }
 
-/* ===== MEDIA QUERIES - CENTRAR AVATAR ===== */
 
 @media (max-width: 768px) {
-    /* Centrar verticalmente el contenido del avatar */
     .user-info {
         align-items: center !important;
     }
@@ -2205,13 +2195,13 @@ footer {
         height: 22px;
     }
 }
-/* ===== REDUCIR ESPACIO SUPERIOR SOLO ESCRITORIO ===== */
+
 @media (min-width: 769px) {
     .hero {
-        padding: 50px 0 80px; /* Reducido de 100px a 70px (solo la parte superior) */
+        padding: 50px 0 80px; 
     }
     
     .badge {
-        margin-bottom: 15px; /* Reducido de 20px a 15px */
+        margin-bottom: 15px; 
     }
 }
