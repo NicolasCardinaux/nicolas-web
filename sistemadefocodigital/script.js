@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         header.addEventListener('click', () => {
             const content = item.querySelector('.accordion-content');
             
-            // Cerrar otros acordeones
             accItems.forEach(other => {
                 if(other !== item) {
                     other.classList.remove('active');
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Toggle acordeón actual
             item.classList.toggle('active');
             if(item.classList.contains('active')) {
                 content.style.maxHeight = content.scrollHeight + "px";
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let timer = duration;
         let minutes, seconds;
         
-        // Intentar cargar tiempo guardado
         const savedEndTime = localStorage.getItem('foco_offer_end');
         const now = new Date().getTime();
         
@@ -41,12 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (timeLeft > 0) {
                 timer = timeLeft;
             } else {
-                // Si el tiempo ya expiró, reiniciar
+
                 const newEndTime = now + (duration * 1000);
                 localStorage.setItem('foco_offer_end', newEndTime.toString());
             }
         } else {
-            // Primera vez - establecer tiempo de expiración
+
             const endTime = now + (duration * 1000);
             localStorage.setItem('foco_offer_end', endTime.toString());
         }
@@ -62,14 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 display.textContent = minutes + ":" + seconds;
             }
 
-            // Actualizar también el contador del top bar si existe
             const topBarTimer = document.querySelector('#countdown-top');
             if (topBarTimer) {
                 topBarTimer.textContent = "00:" + minutes + ":" + seconds;
             }
 
             if (--timer < 0) {
-                // Tiempo terminado - reiniciar
                 clearInterval(interval);
                 const newEndTime = new Date().getTime() + (duration * 1000);
                 localStorage.setItem('foco_offer_end', newEndTime.toString());
@@ -78,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 
-    // Iniciar temporizador de 1 hora (3600 segundos)
     const offerTimer = document.querySelector('#offer-timer');
     if (offerTimer) {
         startTimer(3600, offerTimer);
@@ -87,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. ANIMACIÓN DE CONTADOR DE ESTUDIANTES
     function animateCounter(element, finalValue, duration = 2000) {
         let start = 0;
-        const increment = finalValue / (duration / 16); // 60fps
+        const increment = finalValue / (duration / 16); 
         const timer = setInterval(() => {
             start += increment;
             if (start >= finalValue) {
@@ -128,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Configurar elementos para animación
+
     const animatedElements = document.querySelectorAll('.card, .module-card, .testimonial-card');
     animatedElements.forEach(element => {
         element.style.opacity = "0";
@@ -137,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Ejecutar una vez al cargar
+    revealOnScroll();
 
     // 6. EFECTO DE MÁQUINA DE ESCRIBIR PARA TEXTO DESTACADO
     function typeWriter(element, text, speed = 50) {
@@ -154,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
         type();
     }
 
-    // Aplicar efecto a un elemento específico si existe
     const typedElement = document.querySelector('.typing-effect');
     if (typedElement) {
         const text = typedElement.getAttribute('data-text') || typedElement.textContent;
@@ -165,15 +158,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateViewerCount() {
         const countElement = document.querySelector('#viewer-count');
         if (countElement) {
-            // Número base aleatorio entre 12 y 25
             const baseCount = Math.floor(Math.random() * 13) + 12;
             countElement.textContent = baseCount;
         }
     }
 
-    // Actualizar cada 30 segundos
     setInterval(updateViewerCount, 30000);
-    updateViewerCount(); // Ejecutar inmediatamente
+    updateViewerCount();
 
     // 8. BOTÓN FLOTANTE PARA WHATSAPP O CONSULTAS
     function createFloatingButton() {
@@ -186,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
         `;
         
-        // Estilos inline para el botón de WhatsApp
+
         const styles = `
             <style>
                 .floating-whatsapp {
@@ -234,8 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(floatingBtn);
     }
 
-    // Crear botón flotante (comenta esta línea si no lo necesitas)
-    // createFloatingButton();
+
 
     // 9. ANIMACIÓN DE PROGRESO AL HACER SCROLL
     function updateReadingProgress() {
@@ -250,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Crear barra de progreso
+
     function createProgressBar() {
         const progressBar = document.createElement('div');
         progressBar.className = 'reading-progress';
