@@ -6,6 +6,24 @@
     <title>Sistema de Foco Digital | Recupera tu Tiempo y Productividad</title>
     <meta name="description" content="El sistema operativo digital para eliminar el caos, filtrar la infoxicación y usar la IA como un acelerador real.">
     
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1147835847558630');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1147835847558630&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
     <!-- Favicon para todos los dispositivos -->
     <link rel="icon" type="image/png" href="/sistemadefocodigital/assets/favicon.png">
     <link rel="apple-touch-icon" href="/sistemadefocodigital/assets/favicon.png">
@@ -398,7 +416,10 @@
                             <div class="timer-note">¡El precio aumenta después del temporizador!</div>
                         </div>
                         
-                        <a href="https://pay.hotmart.com/F103118029P" class="btn btn-primary btn-block btn-pulse">
+                        <!-- BOTÓN PRINCIPAL CON EVENTO InitiateCheckout -->
+                        <a href="https://pay.hotmart.com/F103118029P" 
+                           onclick="fbq('track', 'InitiateCheckout');" 
+                           class="btn btn-primary btn-block btn-pulse">
                             <span class="btn-text">OBTENER ACCESO INMEDIATO</span>
                             <span class="btn-subtext">Descarga Inmediata · Garantía de 7 Días</span>
                         </a>
@@ -547,7 +568,12 @@
                 <span>OFERTA FLASH</span>
                 <strong>$27 USD</strong>
             </div>
-            <a href="#oferta" class="btn btn-sm btn-pulse">Comprar Ahora</a>
+            <!-- BOTÓN STICKY CON EVENTO InitiateCheckout -->
+            <a href="https://pay.hotmart.com/F103118029P" 
+               onclick="fbq('track', 'InitiateCheckout');" 
+               class="btn btn-sm btn-pulse">
+               Comprar Ahora
+            </a>
         </div>
     </div>
 
