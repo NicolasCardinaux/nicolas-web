@@ -24,6 +24,12 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
     
+    <!-- Vercel Analytics -->
+    <script type="module">
+      import { inject } from "https://unpkg.com/@vercel/analytics/dist/analytics.module.js";
+      inject();
+    </script>
+    
     <!-- Favicon para todos los dispositivos -->
     <link rel="icon" type="image/png" href="/sistemadefocodigital/assets/favicon.png">
     <link rel="apple-touch-icon" href="/sistemadefocodigital/assets/favicon.png">
@@ -63,7 +69,8 @@
                 </div>
                 
                 <div class="hero-cta-group">
-                    <a href="#oferta" class="btn btn-primary btn-glow btn-pulse">
+                    <!-- BOTÓN PRINCIPAL HERO CON EVENTO InitiateCheckout -->
+                    <a href="#oferta" onclick="fbq('track', 'InitiateCheckout');" class="btn btn-primary btn-glow btn-pulse">
                         <span class="btn-text">OBTENER EL SISTEMA AHORA</span>
                         <span class="btn-subtext">Descarga Inmediata · Garantía de 7 Días</span>
                     </a>
@@ -416,7 +423,7 @@
                             <div class="timer-note">¡El precio aumenta después del temporizador!</div>
                         </div>
                         
-                        <!-- BOTÓN PRINCIPAL CON EVENTO InitiateCheckout -->
+                        <!-- BOTÓN SECCIÓN OFERTA CON EVENTO InitiateCheckout -->
                         <a href="https://pay.hotmart.com/F103118029P" 
                            onclick="fbq('track', 'InitiateCheckout');" 
                            class="btn btn-primary btn-block btn-pulse">
