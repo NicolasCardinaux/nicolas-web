@@ -1829,9 +1829,7 @@ footer {
     position: absolute;
     bottom: 0 !important;
     left: 0 !important;
-    right: auto !important;
-    transform: none !important; /* Quitamos el centrado forzado */
-    
+    right: auto !important;    
     width: 190px; /* Ancho fijo para que no se salga de pantalla */
     max-width: 60%;
     padding: 10px;
