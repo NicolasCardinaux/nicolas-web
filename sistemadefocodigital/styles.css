@@ -1602,36 +1602,42 @@ footer {
 }
 
 
-/* VIDEO DE YOUTUBE - CENTRADO Y TAMAÑO PERFECTO (no inmenso) */
+/* VIDEO DE YOUTUBE - 16:9 ESTÉTICO, CENTRADO Y DEL TAMAÑO PERFECTO */
 .demo-section {
-    padding: 70px 0;
+    padding: 80px 0;
     background: linear-gradient(180deg, #0a0b0e 0%, var(--bg) 100%);
 }
 
 .demo-section .section-subtitle {
-    margin-bottom: 40px !important;
     text-align: center;
+    margin-bottom: 45px !important;
 }
 
-/* Contenedor centrado y con ancho controlado */
+/* Contenedor principal del video */
 .video-embed-wrapper {
     position: relative;
     width: 100%;
-    max-width: 760px;           /* ← Tamaño ideal: más chico que antes, pero sigue viéndose bien */
-    height: 0;
-    padding-bottom: 56.25%;     /* Mantiene ratio 16:9 perfecto */
-    margin: 0 auto 50px auto;  /* ← Centrado perfecto + espacio abajo */
-    background: #000;
-    border-radius: 18px;
+    max-width: 780px;           /* ← Tamaño perfecto (ni muy grande ni muy chico) */
+    margin: 0 auto 60px auto;   /* ← Centrado perfecto + espacio abajo */
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(59, 130, 246, 0.15);
-    transition: transform 0.3s ease;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: #000;
+    transition: all 0.4s ease;
 }
 
 .video-embed-wrapper:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+    transform: translateY(-8px);
+    box-shadow: 0 40px 90px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Forzar ratio 16:9 perfecto */
+.video-embed-wrapper::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 16:9 */
 }
 
 .video-embed-wrapper iframe {
@@ -1643,20 +1649,25 @@ footer {
     border: 0;
 }
 
-/* Responsivo perfecto */
+/* Responsivo perfecto (se adapta lindo en todos los dispositivos) */
+@media (max-width: 1024px) {
+    .video-embed-wrapper {
+        max-width: 700px;
+    }
+}
+
 @media (max-width: 768px) {
     .video-embed-wrapper {
         max-width: 90%;
-        border-radius: 14px;
-        margin-bottom: 40px;
+        border-radius: 16px;
+        margin-bottom: 50px;
     }
 }
 
 @media (max-width: 480px) {
     .video-embed-wrapper {
-        max-width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 96%;
+        border-radius: 14px;
     }
 }
 
