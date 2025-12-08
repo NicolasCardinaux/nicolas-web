@@ -1797,8 +1797,19 @@ footer {
     }
     
     .floating-card {
-        max-width: 160px;
-        padding: 10px;
+        max-width: 120px !important;
+        padding: 8px !important;
+        top: 60% !important; 
+        right: 5% !important; 
+        z-index: 10;
+    }
+    
+    .floating-card p {
+        font-size: 0.7rem;
+    }
+    
+    .floating-card .stars {
+        font-size: 0.8rem;
     }
     
     .logos-row {
