@@ -266,7 +266,7 @@ h1 {
 
 .floating-book { 
     animation: float 6s ease-in-out infinite; 
-    max-width: 350px; /* REDUCIDO */
+    max-width: 500px; /* REDUCIDO */
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
     margin-top: 30px; /* REDUCIDO */
 }
