@@ -1800,7 +1800,6 @@ footer {
         max-width: 160px;          
         padding: 10px 12px;
         border-radius: 10px;
-        transform: translateY(40px) translateX(-20px) !important;
     }
     
     .logos-row {
