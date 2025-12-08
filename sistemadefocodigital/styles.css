@@ -1656,6 +1656,11 @@ footer {
     border: 0;
 }
 
+.hero-visual {
+    position: relative;
+}
+
+
 /* Responsivo perfecto (se adapta lindo en todos los dispositivos) */
 @media (max-width: 1024px) {
     .video-embed-wrapper {
@@ -1797,10 +1802,12 @@ footer {
     }
     
     .floating-card {
-        max-width: 160px;          
-        padding: 10px 12px;
-        border-radius: 5px;
-        transform: translateY(25px) translateX(-25px) !important;
+        position: absolute;
+        max-width: 150px;
+        padding: 10px;
+        border-radius: 12px;
+        transform: translateY(25px) translateX(-20px) !important;
+        z-index: 5;
     }
     
     .logos-row {
