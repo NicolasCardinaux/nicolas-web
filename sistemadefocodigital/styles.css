@@ -1346,9 +1346,9 @@ footer {
     left: 0;
     width: 100%;
     background: var(--card-bg);
-    padding: 12px 15px; /* REDUCIDO */
+    padding: 12px 15px;
     border-top: 1px solid var(--border);
-    display: none; /* Por defecto oculto */
+    display: none;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
@@ -1360,22 +1360,27 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 12px; /* Espacio entre texto y botón */
 }
 
 .sticky-text span {
     display: block;
-    font-size: 0.75rem; /* REDUCIDO */
+    font-size: 0.75rem;
     color: var(--text-muted);
 }
 
 .sticky-text strong {
-    font-size: 1.1rem; /* REDUCIDO */
+    font-size: 1.1rem;
     color: var(--accent);
 }
 
+/* BOTÓN MÁS CORTO Y ELEGANTE */
 .btn-sm {
-    padding: 10px 18px; /* REDUCIDO */
-    font-size: 0.85rem; /* REDUCIDO */
+    padding: 10px 16px;        
+    font-size: 0.85rem;
+    white-space: nowrap;       
+    min-width: auto;          
+    border-radius: 12px;       
 }
 
 /* Estilos adicionales para video overlay */
