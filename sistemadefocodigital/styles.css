@@ -1799,7 +1799,8 @@ footer {
     .floating-card {
         max-width: 160px;          
         padding: 10px 12px;
-        border-radius: 10px;
+        border-radius: 5px;
+        transform: translateY(25px) translateX(-20px);
     }
     
     .logos-row {
