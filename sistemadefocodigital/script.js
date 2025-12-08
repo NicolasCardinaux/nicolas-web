@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. TIMER ALEATORIO (15-30 minutos)
     function startRandomTimer(display, topBarDisplay) {
         // Generar tiempo aleatorio entre 15 y 30 minutos
-        const minMinutes = 15;
-        const maxMinutes = 30;
+        const minMinutes = 30;
+        const maxMinutes = 60;
         const randomMinutes = Math.floor(Math.random() * (maxMinutes - minMinutes + 1)) + minMinutes;
         const duration = randomMinutes * 60;
         
@@ -441,7 +441,7 @@ buyButtons.forEach(button => {
     // 11. CONTADOR ALEATORIO DE UNIDADES
     function updateRemainingUnits() {
         const unitsElements = document.querySelectorAll('[data-units]');
-        const randomUnits = Math.floor(Math.random() * 15) + 5; // 5-20 unidades
+        const randomUnits = Math.floor(Math.random() * 40) + 25; // 5-20 unidades
         
         unitsElements.forEach(element => {
             element.textContent = randomUnits;
