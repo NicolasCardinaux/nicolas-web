@@ -1796,41 +1796,40 @@ footer {
     }
     
  .hero-visual {
-    min-height: 380px; /* Altura suficiente pero no exagerada */
+    min-height: 380px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Clave para que los flotantes respeten este recuadro */
+    position: relative; 
     margin-bottom: 20px;
  } 
 
  .floating-book {
-    max-width: 200px; /* Imagen central un poco más chica para dar aire */
+    max-width: 300px; 
     margin: 0; 
     position: relative;
     z-index: 1;
  }
 
- /* Badge: Arriba a la DERECHA (como en desktop, pero escalado) */
  .results-badge {
     position: absolute;
-    top: 10px !important;
+    top: 30px !important;
     right: 0 !important;
     left: auto !important;
-    transform: scale(0.85); /* Achicamos visualmente al 85% */
-    transform-origin: top right; /* Se achica hacia la esquina */
+    transform: scale(0.85); 
+    transform-origin: top right; 
     width: max-content;
     z-index: 5;
     margin: 0;
  }
 
- /* Tarjeta: Abajo a la IZQUIERDA (como en desktop, pero ajustada) */
+
  .floating-card {
     position: absolute;
     bottom: 0 !important;
     left: 0 !important;
     right: auto !important;    
-    width: 190px; /* Ancho fijo para que no se salga de pantalla */
+    width: 190px; 
     max-width: 60%;
     padding: 10px;
     z-index: 10;
@@ -1838,7 +1837,7 @@ footer {
  }
 
  .floating-card p {
-    font-size: 0.7rem !important; /* Texto ajustado */
+    font-size: 0.7rem !important; 
     line-height: 1.2;
     margin-bottom: 4px !important;
  }
