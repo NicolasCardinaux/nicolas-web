@@ -1797,12 +1797,12 @@ footer {
     }
     
     .floating-card {
-        max-width: 220px;           /* Más rectangular y amplia */
+        max-width: 200px;           
         padding: 12px 14px;
-        border-radius: 12px;        /* Más moderno */
-        transform: translateY(40px) translateX(-10px); /* La baja y la corre a la izquierda */
-        background: rgba(0,0,0,0.55); /* Más contraste para leer */
+        border-radius: 12px;
+        background: rgba(0,0,0,0.55);
         backdrop-filter: blur(4px);
+        transform: translateY(10px) translateX(-25px);
     }
 
     .floating-card p {
