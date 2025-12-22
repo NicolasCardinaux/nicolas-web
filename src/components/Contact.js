@@ -11,7 +11,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Función para copiar correo en esta sección
+  // Función para copiar el correo al portapapeles
   const handleCopyEmail = (e) => {
     e.preventDefault();
     navigator.clipboard.writeText('contacto.nicolascardinaux@gmail.com');
@@ -34,14 +34,29 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      // 1. Preparamos los datos con configuraciones especiales para FormSubmit
+      // El "_captcha: false" es CRÍTICO para que funcione en Vercel sin pedir validación visual
+      const dataToSend = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        _subject: "Nuevo contacto desde Portafolio Web", // Asunto del correo
+        _template: "table", // Hace que el correo se vea más ordenado
+        _captcha: "false"   // EVITA que el formulario se bloquee pidiendo captcha
+      };
+
+      // 2. Enviamos la petición
       const response = await fetch('https://formsubmit.co/ajax/contacto.nicolascardinaux@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(dataToSend)
       });
+
+      // 3. Verificamos la respuesta
+      const result = await response.json();
 
       if (response.ok) {
         toast.success('¡Gracias por tu mensaje! Te contactaré pronto.', {
@@ -50,10 +65,13 @@ const Contact = () => {
         });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        throw new Error('Error al enviar el formulario');
+        console.error("Error devuelto por FormSubmit:", result);
+        throw new Error(result.message || 'Error al enviar el formulario');
       }
+
     } catch (error) {
-      toast.error('Lo siento, hubo un error al enviar tu mensaje. Por favor intenta más tarde.', {
+      console.error("Error de conexión:", error);
+      toast.error('Hubo un error al enviar. Por favor, intenta de nuevo o escríbeme directo.', {
         position: "top-right",
         autoClose: 5000,
       });
@@ -79,7 +97,7 @@ const Contact = () => {
 
             <div className="mt-6 space-y-4">
               
-              {/* SECCIÓN EMAIL MODIFICADA PARA COPIAR */}
+              {/* Email Copiable */}
               <div className="flex items-center gap-3 group cursor-pointer" onClick={handleCopyEmail}>
                 <FaEnvelope className="text-primary group-hover:scale-110 transition-transform" />
                 <span className="hover:text-primary transition-colors">
