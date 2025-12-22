@@ -23,7 +23,7 @@ const ChatBot = () => {
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       return 'http://localhost:5000';
     }
-    return 'https://tu-backend-en-render.com'; // ⚠️ CAMBIA ESTO POR TU URL REAL DE RENDER
+    return 'https://nicobot-backend.onrender.com'; // ⚠️ CAMBIA ESTO POR TU URL REAL DE RENDER
   };
 
   const API_URL = `${getBackendUrl()}/chat`;
