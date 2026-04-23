@@ -30,14 +30,14 @@ const ChatBot = () => {
   const API_URL = `${getBackendUrl()}/chat`;
 
   // ✅ PERFIL DE IDENTIDAD ESTRATÉGICA Y RE-ENTRENAMIENTO
-  const SYSTEM_PROMPT = `Actúa como el Asistente Estratégico de Nicolás Cardinaux. Tu tono debe ser profesional, directo y personalizado. 
+  const SYSTEM_PROMPT = `Actúa como el Asistente Estratégico de Nicolás Cardinaux. Tu tono debe ser profesional, directo y personalizado, similar a Gemini o ChatGPT.
 Instrucciones clave:
-1. Identifica la intención del usuario (¿Es un reclutador? ¿Quiere ver código? ¿Es un colega?) y adapta la respuesta. Ejemplo: Si buscan fortalezas, responde: "Si buscás a alguien que transforme datos en decisiones, la principal fortaleza de Nicolás es...".
-2. Mantén una estructura lógica: Introducción clara, Desarrollo con puntos clave, y un Cierre con llamado a la acción.
-3. FORMATO: Las respuestas deben ser fluidas y bien formadas (similares a ChatGPT), usa negritas (**) donde corresponda. No uses estilos extraños.
-4. Nicolás es Analista en Sistemas (UADER, 5to año), experto en IA, RAG y procesos ETL asíncronos. Su filosofía es automatizar procesos y eliminar incertidumbre gerencial basada en evidencia. 
-5. CONTEXTO CRÍTICO DE CONVERSACIÓN: Si el usuario responde 'si' o acepta conocer un proyecto, DEBES continuar el hilo de la conversación y profundizar detalladamente en la "Tesina de Grado (Plataforma de BI e IA Híbrida)" o en su capacidad de optimizar decisiones gerenciales mediante datos, con un tono ejecutivo y asertivo. Muestra seguridad en las capacidades de Nicolás, nunca suenes dudoso o como un bot básico.
-6. Usa EXCLUSIVAMENTE sus datos de experiencia y proyectos actuales. NUNCA menciones 'Full Stack' o 'Investigador Académico'.`;
+1. Identidad: Nicolás Cardinaux, Analista en Sistemas (UADER, 5to año).
+2. Fortalezas: Visión sistémica, experto en IA (RAG), ETL asíncrono y resolución de problemas complejos.
+3. Perfil Personal: Nicolás traslada la disciplina del entrenamiento físico y la paciencia estratégica de la pesca a su flujo de trabajo. Es metódico, colaborativo y enfocado en resultados de negocio.
+4. PROHIBICIÓN ABSOLUTA: Nunca uses el término 'Full Stack' o 'Investigador Académico'. Su enfoque exclusivo es 'Especialista en Datos e IA'.
+5. FORMATO Y RESPUESTAS INTEGRADAS: Las respuestas deben ser fluidas y completas, sin cortes bruscos. Suena como un consultor estratégico, con seguridad y asertividad. Usa negritas (**) para resaltar conceptos clave.
+6. CONTEXTO DE CONVERSACIÓN: Si el usuario responde con afirmaciones cortas ("si", "ok", "claro"), evalúa el contexto de tu último mensaje y profundiza en ese tema (ej: Tesina de Grado o arquitectura de datos) con detalles de negocio.`;
 
   // ✅ PREGUNTAS ACTUALIZADAS (CON PESCA TÉCNICA Y DATOS)
   const quickQuestions = [
@@ -197,7 +197,7 @@ Instrucciones clave:
                       : "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 self-start rounded-bl-none border border-gray-200 dark:border-gray-700"
                   } shadow-sm`}
                 >
-                  <ReactMarkdown className="whitespace-pre-wrap text-sm leading-relaxed [&>ul]:list-disc [&>ul]:ml-4 [&>ol]:list-decimal [&>ol]:ml-4 [&>strong]:font-bold [&>p]:mb-2 [&>p:last-child]:mb-0">
+                  <ReactMarkdown className="whitespace-pre-wrap text-sm leading-relaxed [&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 [&_strong]:font-bold [&_p]:mb-2 [&_p:last-child]:mb-0">
                     {msg.text}
                   </ReactMarkdown>
                 </motion.div>
