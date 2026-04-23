@@ -4,9 +4,9 @@ import profileVideo from "../Assets/nicoperfil.mp4";
 
 export const profile = {
   name: "Nicolás Cardinaux",
-  titles: ["Analista en Sistemas", "Especialista en Datos y Automatización", "Inteligencia Artificial, IA y Soluciones"],
+  titles: ["Analista de Sistemas", "Especialista en Datos y Automatización", "Inteligencia Artificial, IA y Soluciones"],
   bio: [
-    "Analista en Sistemas especializado en soluciones de IA y Automatización. Mi experiencia se centra en el diseño de motores ETL asíncronos y arquitecturas RAG para optimizar la toma de decisiones gerenciales basadas en datos comprobables.",
+    "Analista de Sistemas especializado en soluciones de IA y Automatización. Mi experiencia se centra en el diseño de motores ETL asíncronos y arquitecturas RAG para optimizar la toma de decisiones gerenciales basadas en datos comprobables.",
     "Integro Inteligencia Artificial y ciberseguridad para potenciar mis desarrollos, enfocándome siempre en arquitecturas limpias, eficientes y escalables.",
     "Mi objetivo es brindar Soluciones: ya sea una app móvil, un sistema web o una automatización compleja, me adapto a lo que el proyecto necesite para resolver problemas reales.",
   ],

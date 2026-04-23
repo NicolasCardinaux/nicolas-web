@@ -26,13 +26,13 @@ function App() {
     <div className="min-h-screen bg-background text-foreground relative">
       <Helmet>
         {/* Título Principal */}
-        <title>Nicolás Cardinaux | Analista en Sistemas | Especialista en Datos e IA</title>
+        <title>Nicolás Cardinaux | Analista de Sistemas | Especialista en Datos e IA</title>
         
         {/* Descripción para Google */}
-        <meta name="description" content="Portafolio profesional de Nicolás Cardinaux. Analista en Sistemas y Especialista en Datos e IA enfocado en motores ETL y arquitecturas RAG." />
+        <meta name="description" content="Portafolio profesional de Nicolás Cardinaux. Analista de Sistemas y Especialista en Datos e IA enfocado en motores ETL y arquitecturas RAG." />
         
         {/* Palabras Clave */}
-        <meta name="keywords" content="Nicolás Cardinaux, Analista en Sistemas, Desarrollador Full Stack, UADER, Python, React, Django, Portfolio, Argentina, Entre Ríos" />
+        <meta name="keywords" content="Nicolás Cardinaux, Analista de Sistemas, Desarrollador Full Stack, UADER, Python, React, Django, Portfolio, Argentina, Entre Ríos" />
         
         <meta name="author" content="Nicolás Cardinaux" />
         
@@ -45,7 +45,7 @@ function App() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Nicolás Cardinaux - Portafolio" />
-        <meta name="twitter:description" content="Analista en Sistemas y Especialista en Datos e IA." />
+        <meta name="twitter:description" content="Analista de Sistemas y Especialista en Datos e IA." />
         
         <link rel="canonical" href={siteUrl} />
         
@@ -60,7 +60,7 @@ function App() {
               "https://github.com/NicolasCardinaux",
               "https://www.linkedin.com/in/nicolas-cardinaux/"
             ],
-            "jobTitle": "Analista en Sistemas & Especialista en Datos e IA",
+            "jobTitle": "Analista de Sistemas & Especialista en Datos e IA",
             "description": "Portafolio de Nicolás Cardinaux, profesional en tecnología enfocado en soluciones escalables, IA y desarrollo web/móvil.",
             "worksFor": {
               "@type": "Organization",

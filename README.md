@@ -6,7 +6,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 **Portafolio personal moderno y responsivo**, construido con React y Tailwind CSS.  
-Diseñado para mostrar mi trayectoria como Analista en Sistemas y Desarrollador Full Stack, proyectos destacados, habilidades técnicas y certificaciones de forma interactiva.
+Diseñado para mostrar mi trayectoria como Analista de Sistemas y Desarrollador Full Stack, proyectos destacados, habilidades técnicas y certificaciones de forma interactiva.
 
 🔗 **Demo en vivo:** [https://www.nicolascardinaux.com/](https://www.nicolascardinaux.com/)  
 *(Reemplaza con tu enlace real una vez desplegado)*

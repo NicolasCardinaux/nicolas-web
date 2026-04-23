@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="space-y-2 md:max-w-xs">
             <h3 className="text-lg font-semibold">{profile.name}</h3>
             <p className="text-sm text-muted-foreground">
-              Analista en Sistemas y Desarrollador de Software apasionado por crear soluciones innovadoras, escalables y de alto rendimiento.
+              Analista de Sistemas y Desarrollador de Software apasionado por crear soluciones innovadoras, escalables y de alto rendimiento.
             </p>
           </div>
 

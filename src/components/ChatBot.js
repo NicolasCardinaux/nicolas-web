@@ -7,7 +7,7 @@ const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { 
-      text: "¡Hola! Soy el Asistente Estratégico de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: Nicolás es Analista en Sistemas especializado en IA, Datos y Automatización.\n\n¿Por dónde te gustaría empezar? 💡", 
+      text: "¡Hola! Soy el Asistente Estratégico de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: Nicolás es Analista de Sistemas especializado en IA, Datos y Automatización.\n\n¿Por dónde te gustaría empezar? 💡", 
       sender: "bot",
       metadata: { procesado_por: 'saludo_inicial' }
     }
@@ -32,7 +32,7 @@ const ChatBot = () => {
   // ✅ PERFIL DE IDENTIDAD ESTRATÉGICA Y RE-ENTRENAMIENTO
   const SYSTEM_PROMPT = `Actúa como el Asistente Estratégico de Nicolás Cardinaux. Tu tono debe ser profesional, directo y personalizado, similar a Gemini o ChatGPT.
 Instrucciones clave:
-1. Identidad: Nicolás Cardinaux, Analista en Sistemas (UADER, 5to año).
+1. Identidad: Nicolás Cardinaux, Analista de Sistemas (UADER, 5to año).
 2. Fortalezas: Visión sistémica, experto en IA (RAG), ETL asíncrono y resolución de problemas complejos.
 3. Perfil Personal: Nicolás traslada la disciplina del entrenamiento físico y la paciencia estratégica de la pesca a su flujo de trabajo. Es metódico, colaborativo y enfocado en resultados de negocio.
 4. PROHIBICIÓN ABSOLUTA: Nunca uses el término 'Full Stack' o 'Investigador Académico'. Su enfoque exclusivo es 'Especialista en Datos e IA'.
@@ -105,7 +105,7 @@ Instrucciones clave:
       const msgLower = messageText.toLowerCase();
       
       if (msgLower.includes('hola') || msgLower.includes('buenas')) {
-        reply = "¡Hola! Soy el Asistente Estratégico de Nicolás Cardinaux, Analista en Sistemas especializado en IA, Datos y Automatización.\n\n¿En qué puedo ayudarte hoy?";
+        reply = "¡Hola! Soy el Asistente Estratégico de Nicolás Cardinaux, Analista de Sistemas especializado en IA, Datos y Automatización.\n\n¿En qué puedo ayudarte hoy?";
       } else if (msgLower.includes('proyecto') || msgLower.includes('trabajo')) {
         reply = "Proyectos destacados de Nicolás:\n\n- Plataforma de BI e IA Híbrida: Motor ETL asíncrono y arquitectura RAG para PyMEs.\n- AntiHumo News: Portal automatizado con IA y NLP.\n- ImportFunko: Proyecto Final de Carrera.\n\n¿Quieres detalles técnicos de alguno en particular?";
       } else if (msgLower.includes('tecnolog') || msgLower.includes('stack') || msgLower.includes('herramienta') || msgLower.includes('habilidades')) {
@@ -134,7 +134,7 @@ Instrucciones clave:
   const resetChat = () => {
     setMessages([
       { 
-        text: "¡Hola! Soy el Asistente Estratégico de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: Nicolás es Analista en Sistemas especializado en IA, Datos y Automatización.\n\n¿Por dónde te gustaría empezar? 💡", 
+        text: "¡Hola! Soy el Asistente Estratégico de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: Nicolás es Analista de Sistemas especializado en IA, Datos y Automatización.\n\n¿Por dónde te gustaría empezar? 💡", 
         sender: "bot",
         metadata: { procesado_por: 'saludo_inicial' }
       }
@@ -163,7 +163,7 @@ Instrucciones clave:
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Asistente de Nicolás</h3>
-                  <p className="text-sm opacity-90">Analista en Sistemas</p>
+                  <p className="text-sm opacity-90">Analista de Sistemas</p>
                 </div>
               </div>
               <div className="flex gap-2">

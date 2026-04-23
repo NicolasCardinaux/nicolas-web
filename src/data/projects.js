@@ -29,7 +29,7 @@ export const projects = [
     tags: ['Python', 'React', 'AI', 'API REST', 'Automation'],
   },
   {
-    title: 'ImportFunko | Proyecto Final de Carrera (Analista en Sistemas)',
+    title: 'ImportFunko | Proyecto Final de Carrera (Analista de Sistemas)',
     period: '2024',
     bullets: [
       'Tienda online completa para figuras coleccionables.',

@@ -64,15 +64,17 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}>
             Hola, soy <span className="text-primary">Nicolás</span><br/>
             
-            <ReactTyped
-              strings={profile.titles}
-              typeSpeed={40}
-              backSpeed={20}
-              backDelay={1500}
-              loop
-              smartBackspace={false}
-              className="typed-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent"
-            />
+            <div className="min-h-[80px] sm:min-h-[40px] flex items-start">
+              <ReactTyped
+                strings={profile.titles}
+                typeSpeed={40}
+                backSpeed={20}
+                backDelay={1500}
+                loop
+                smartBackspace={false}
+                className="typed-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent"
+              />
+            </div>
           </motion.h3>
           
           {profile.bio.map((p, i) => (
@@ -159,7 +161,7 @@ const About = () => {
                     Nicolás Cardinaux
                   </h4>
                   <span className="text-xs text-muted-foreground uppercase tracking-widest mt-1">
-                    Analista en Sistemas
+                    Analista de Sistemas
                   </span>
                 </div>
 
