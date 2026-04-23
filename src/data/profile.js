@@ -15,7 +15,7 @@ export const profile = {
   image: profilePic,
   social: {
     email: "contacto.nicolascardinaux@gmail.com",
-    linkedin: "https://www.linkedin.com/in/nicol%C3%A1s-cardinaux-a38b03365/", 
+    linkedin: "https://www.linkedin.com/in/nicolas-cardinaux/", 
     github: "https://github.com/NicolasCardinaux",
     instagram: "https://www.instagram.com/cardinauxnicolas?igsh=cWxhd3luamsyM25x",
   },
