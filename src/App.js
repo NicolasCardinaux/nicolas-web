@@ -26,10 +26,10 @@ function App() {
     <div className="min-h-screen bg-background text-foreground relative">
       <Helmet>
         {/* Título Principal */}
-        <title>Nicolás Cardinaux | Analista en Sistemas & Full Stack Dev</title>
+        <title>Nicolás Cardinaux | Analista en Sistemas | Especialista en Datos e IA</title>
         
         {/* Descripción para Google */}
-        <meta name="description" content="Portafolio profesional de Nicolás Cardinaux. Analista en Sistemas y Desarrollador Full Stack especializado en Python, React y soluciones de Inteligencia Artificial." />
+        <meta name="description" content="Portafolio profesional de Nicolás Cardinaux. Analista en Sistemas y Especialista en Datos e IA enfocado en motores ETL y arquitecturas RAG." />
         
         {/* Palabras Clave */}
         <meta name="keywords" content="Nicolás Cardinaux, Analista en Sistemas, Desarrollador Full Stack, UADER, Python, React, Django, Portfolio, Argentina, Entre Ríos" />
@@ -45,7 +45,7 @@ function App() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Nicolás Cardinaux - Portafolio" />
-        <meta name="twitter:description" content="Analista en Sistemas y Desarrollador Full Stack. Mira mis proyectos en Python y React." />
+        <meta name="twitter:description" content="Analista en Sistemas y Especialista en Datos e IA." />
         
         <link rel="canonical" href={siteUrl} />
         
@@ -58,9 +58,9 @@ function App() {
             "url": "${siteUrl}",
             "sameAs": [
               "https://github.com/NicolasCardinaux",
-              "https://www.linkedin.com/in/nicolascardinaux"
+              "https://www.linkedin.com/in/nicolas-cardinaux/"
             ],
-            "jobTitle": "Analista en Sistemas & Desarrollador Full Stack",
+            "jobTitle": "Analista en Sistemas & Especialista en Datos e IA",
             "description": "Portafolio de Nicolás Cardinaux, profesional en tecnología enfocado en soluciones escalables, IA y desarrollo web/móvil.",
             "worksFor": {
               "@type": "Organization",

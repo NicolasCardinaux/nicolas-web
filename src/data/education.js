@@ -3,7 +3,7 @@ export const education = [
     degree: 'Licenciatura en Sistemas de Información',
     institution: 'UADER - Facultad de Ciencia y Tecnología',
     period: '2022 - Presente',
-    extra: 'Estado: Avanzado (4º año aprobado). Enfoque en Ingeniería de Software y Bases de Datos.',
+    extra: 'Estado: 5to año en curso (Finalizando cursada). Enfoque en Inteligencia Artificial y Business Intelligence.',
   },
   {
     degree: 'Analista en Sistemas',

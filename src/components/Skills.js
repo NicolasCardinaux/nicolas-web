@@ -70,7 +70,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div 
                     key={skillIndex} 
-                    className="group relative"
+                    className="group relative flex flex-col items-center justify-center text-center"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}

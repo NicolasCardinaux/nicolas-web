@@ -3,8 +3,12 @@ import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram, FaCheck, FaQuoteLeft } f
 import { ReactTyped } from 'react-typed';
 import { profile } from '../data/profile';
 import { motion } from 'framer-motion';
+import perfilImgLight from '../Assets/Perfil.jpeg';
+import perfilImgDark from '../Assets/Perfilneg.jpeg';
+import { useTheme } from './theme/theme-provider';
 
 const About = () => {
+  const { theme } = useTheme();
   const [copied, setCopied] = useState(false);
   
   // ESTADOS HÍBRIDOS:
@@ -129,12 +133,9 @@ const About = () => {
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div className="absolute inset-0 z-20 bg-transparent"></div>
-                  <video
-                    src={profile.video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <img
+                    src={theme === 'dark' ? perfilImgDark : perfilImgLight}
+                    alt="Perfil de Nicolás"
                     className="w-full h-full object-cover"
                   />
                 </div>

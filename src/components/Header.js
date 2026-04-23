@@ -9,8 +9,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [, setScrolled] = useState(false);
 
-  // Link a tu CV 
-  const resumeLink = "https://www.linkedin.com/in/nicol%C3%A1s-cardinaux-a38b03365/"; 
+  // Link a tu CV local
+  const resumeLink = "/CV-NicolasCardinaux.pdf"; 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -86,8 +86,10 @@ const Header = () => {
             <li>
               <a 
                 href={resumeLink} 
-                target="_blank"
-                rel="noopener noreferrer"
+                download="CV_Nicolas_Cardinaux.pdf"
+                target="_self"
+                rel="noreferrer"
+                type="application/pdf"
                 className="inline-flex h-9 items-center rounded-md border border-border px-3 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Descargar CV
@@ -124,8 +126,10 @@ const Header = () => {
               <li>
                 <a 
                   href={resumeLink} 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download="CV_Nicolas_Cardinaux.pdf"
+                  target="_self"
+                  rel="noreferrer"
+                  type="application/pdf"
                   className="inline-flex h-9 items-center rounded-md border border-border px-3 text-sm hover:bg-accent hover:text-accent-foreground transition-colors w-full justify-center mt-2"
                 >
                   Descargar CV

@@ -1,5 +1,19 @@
 export const projects = [
   {
+    title: 'Plataforma de BI e IA Híbrida (Tesina de Grado)',
+    period: 'Presente',
+    bullets: [
+      'Desarrollo de motor ETL asíncrono para procesamiento eficiente de datos.',
+      'Implementación de arquitectura RAG adaptada para PyMEs.',
+      'Análisis bifurcado de datos operativos y financieros para la toma de decisiones gerenciales.',
+    ],
+    links: {
+      code: null,
+      demo: null,
+    },
+    tags: ['Python', 'ETL', 'RAG', 'BI', 'IA'],
+  },
+  {
     title: 'AntiHumo News | Portal IA',
     period: '2024 - Presente',
     bullets: [
@@ -15,7 +29,7 @@ export const projects = [
     tags: ['Python', 'React', 'AI', 'API REST', 'Automation'],
   },
   {
-    title: 'ImportFunko | E-commerce',
+    title: 'ImportFunko | Proyecto Final de Carrera (Analista en Sistemas)',
     period: '2024',
     bullets: [
       'Tienda online completa para figuras coleccionables.',
@@ -27,22 +41,7 @@ export const projects = [
       code: 'https://github.com/NicolasCardinaux/ImportFunko',
       demo: 'https://importfunko.vercel.app',
     },
-    tags: ['React', 'Next.js', 'Tailwind CSS', 'E-commerce'],
-  },
-  {
-    title: 'API Backend con Django',
-    period: '2023',
-    bullets: [
-      'API RESTful robusta construida con Django Framework.',
-      'Gestión eficiente de base de datos SQL con ORM.',
-      'Endpoints seguros y documentados para consumo externo.',
-      'Arquitectura escalable basada en modelos y vistas.',
-    ],
-    links: {
-      code: 'https://github.com/NicolasCardinaux/Practica-Django',
-      demo: null,
-    },
-    tags: ['Python', 'Django', 'SQL', 'Backend', 'API'],
+    tags: ['React', 'Next.js', 'E-commerce'],
   },
   {
     title: 'Red Neuronal de Hamming',

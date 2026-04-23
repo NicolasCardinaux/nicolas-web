@@ -6,7 +6,7 @@ const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { 
-      text: "¡Hola! Soy el asistente virtual de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: combina solidez técnica como Analista en Sistemas con creatividad aplicada en proyectos reales.\n\n¿Por dónde te gustaría empezar? 💡", 
+      text: "¡Hola! Soy el asistente virtual de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: Nicolás es Analista en Sistemas especializado en IA, Datos y Automatización.\n\n¿Por dónde te gustaría empezar? 💡", 
       sender: "bot",
       metadata: { procesado_por: 'saludo_inicial' }
     }
@@ -28,12 +28,15 @@ const ChatBot = () => {
 
   const API_URL = `${getBackendUrl()}/chat`;
 
-  // ✅ PREGUNTAS ACTUALIZADAS (CON GIMNASIO)
+  // ✅ PERFIL DE IDENTIDAD ESTRATÉGICA
+  const SYSTEM_PROMPT = `Nicolás Cardinaux es un profesional de la tecnología con una mentalidad orientada a la eficiencia y la toma de decisiones basada en evidencia. Actualmente transitando el último año de la Licenciatura en Sistemas de Información en la UADER FCyT, ha evolucionado desde el desarrollo Full-Stack hacia una especialización profunda en Ciencia de Datos e Inteligencia Artificial. Su filosofía profesional: Nicolás no ve la tecnología como un fin, sino como una herramienta para optimizar la realidad. Su enfoque principal es la automatización de procesos y la creación de arquitecturas de datos (ETL) que eliminen la incertidumbre en entornos gerenciales. Se destaca por su capacidad de implementar soluciones de IA de vanguardia (RAG) que permiten a organizaciones interactuar con sus propios datos de forma trazable y segura. En lo personal: Es una persona metódica, apasionada por los desafíos que requieren una base matemática sólida —como lo demuestra su trabajo con Redes de Hamming— pero que también valora la simplicidad y la elegancia en el diseño de interfaces. Reside en Urdinarrain, Entre Ríos, y traslada la paciencia y precisión de sus intereses personales (como la pesca técnica) a la resolución de problemas complejos de software. Su comunicación es directa, técnica pero accesible, siempre enfocada en brindar soluciones que aporten valor real. Instrucción para el bot: basar respuestas únicamente en experiencia y proyectos actuales, sin mencionar Full Stack o Investigador Académico.`;
+
+  // ✅ PREGUNTAS ACTUALIZADAS (CON PESCA TÉCNICA Y DATOS)
   const quickQuestions = [
     "🚀 ¿Por qué contratar a Nicolás?",
     "💻 ¿Cuáles son sus mejores proyectos?",
     "🛠️ ¿Qué tecnologías domina?",
-    "🏋️‍♂️ ¿Quién es Nicolás fuera del código?"
+    "🎣 ¿Quién es Nicolás fuera del código?"
   ];
 
   const scrollToBottom = () => {
@@ -60,7 +63,11 @@ const ChatBot = () => {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({ message: messageText }),
+        body: JSON.stringify({ 
+          message: messageText,
+          context: SYSTEM_PROMPT,
+          system_prompt: SYSTEM_PROMPT
+        }),
       });
 
       const data = await response.json();
@@ -75,20 +82,20 @@ const ChatBot = () => {
       console.error('Error de conexión:', error);
       
       // ✅ FALLBACKS ACTUALIZADOS (ANALISTA)
-      let reply = "¡Gracias por tu pregunta! 🤖\n\nNicolás Cardinaux es Analista en Sistemas con sólida formación técnica y experiencia práctica en desarrollo full-stack e IA aplicada.\n\n¿Te gustaría saber más sobre algún proyecto específico?";
+      let reply = "¡Gracias por tu pregunta! 🤖\n\nNicolás Cardinaux es Analista en Sistemas especializado en IA, Datos y Automatización (Arquitectura RAG, procesos ETL asíncronos y BI). Actualmente está finalizando el 5to año de la Licenciatura.\n\n¿Te gustaría saber más sobre sus proyectos?";
       
       const msgLower = messageText.toLowerCase();
       
       if (msgLower.includes('hola') || msgLower.includes('buenas')) {
-        reply = "¡Hola! 🤖\n\nSoy el asistente de Nicolás Cardinaux, Analista en Sistemas especializado en desarrollo web e inteligencia artificial aplicada.\n\n¿En qué puedo ayudarte hoy?";
+        reply = "¡Hola! 🤖\n\nSoy el asistente de Nicolás Cardinaux, Analista en Sistemas especializado en IA, Datos y Automatización.\n\n¿En qué puedo ayudarte hoy?";
       } else if (msgLower.includes('proyecto') || msgLower.includes('trabajo')) {
-        reply = "🤖 **Proyectos destacados de Nicolás:**\n\n📰 **AntiHumo News**: Portal con IA para filtrar desinformación (Python + React)\n🛡️ **Detector de Phishing**: Sistema con redes neuronales para ciberseguridad\n📱 **E-commerce Tech**: Aplicación móvil completa con React Native\n\n¿Querés detalles técnicos de alguno?";
-      } else if (msgLower.includes('tecnolog') || msgLower.includes('stack') || msgLower.includes('herramienta')) {
-        reply = "🤖 **Stack técnico de Nicolás:**\n\n• **Frontend**: React / React Native\n• **Backend**: Python (especialidad), Node.js\n• **IA/Datos**: Redes neuronales, procesamiento de lenguaje\n• **Infraestructura**: Git, Docker, bases de datos, redes\n\n¿Alguna tecnología específica que te interese?";
+        reply = "🤖 **Proyectos destacados de Nicolás:**\n\n📊 **Plataforma de BI e IA Híbrida**: Motor ETL asíncrono y arquitectura RAG para PyMEs\n📰 **AntiHumo News**: Portal automatizado con IA y NLP\n🛒 **ImportFunko**: Proyecto Final de Carrera\n\n¿Querés detalles técnicos de alguno?";
+      } else if (msgLower.includes('tecnolog') || msgLower.includes('stack') || msgLower.includes('herramienta') || msgLower.includes('habilidades')) {
+        reply = "🤖 **Especialidad técnica de Nicolás:**\n\n• **Datos e IA**: Python (Pandas), Arquitectura RAG, LangChain, BI\n• **Backend**: PostgreSQL, Docker, ETL asíncrono\n• **Frontend**: Interfaces React\n\n¿Alguna tecnología específica que te interese?";
       } else if (msgLower.includes('diferente') || msgLower.includes('contratar') || msgLower.includes('por qué')) {
-        reply = "🤖 **¿Por qué Nicolás?**\n\n1. **Enfoque de Analista**: Piensa en sistemas completos, no solo en código\n2. **Versatilidad técnica**: Frontend, backend e IA en proyectos reales\n3. **Soluciones prácticas**: Cada proyecto resuelve problemas concretos\n\n¿Buscás habilidades específicas?";
-      } else if (msgLower.includes('fuera') || msgLower.includes('quién es') || msgLower.includes('gimnasio')) {
-        reply = "🤖 **Fuera del código:**\n\n🏋️‍♂️ Su disciplina en el gimnasio refleja su constancia profesional: la mejora continua es clave.\n⚽ El fútbol le enseñó el valor del trabajo en equipo sincronizado.\n\nEsa mentalidad la lleva a cada proyecto de software.";
+        reply = "🤖 **¿Por qué Nicolás?**\n\n1. **Foco en Datos**: Optimiza la toma de decisiones gerenciales basadas en datos comprobables.\n2. **Soluciones Híbridas**: Diseña motores ETL asíncronos y arquitecturas RAG.\n3. **Consultor de Automatización**: Transforma datos manuales en reportes automatizados.\n\n¿Buscás habilidades específicas?";
+      } else if (msgLower.includes('fuera') || msgLower.includes('quién es') || msgLower.includes('personal') || msgLower.includes('pesca')) {
+        reply = "🤖 **Fuera del código:**\n\n🎣 Reside en Urdinarrain, Entre Ríos, y traslada la paciencia y precisión de sus intereses personales (como la pesca técnica) a la resolución de problemas complejos de software.\n\nEsa mentalidad metódica la lleva a cada arquitectura de datos.";
       }
       
       setMessages(prev => [...prev, { 
@@ -109,7 +116,7 @@ const ChatBot = () => {
   const resetChat = () => {
     setMessages([
       { 
-        text: "¡Hola! Soy el asistente virtual de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: combina solidez técnica como Analista en Sistemas con creatividad aplicada en proyectos reales.\n\n¿Por dónde te gustaría empezar? 💡", 
+        text: "¡Hola! Soy el asistente virtual de Nicolás Cardinaux. 🤖\n\nEstoy aquí para mostrarte por qué es el profesional que buscas: Nicolás es Analista en Sistemas especializado en IA, Datos y Automatización.\n\n¿Por dónde te gustaría empezar? 💡", 
         sender: "bot",
         metadata: { procesado_por: 'saludo_inicial' }
       }
