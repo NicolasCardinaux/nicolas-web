@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaPaperPlane, FaTimes, FaCommentDots, FaRedo, FaRobot } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,14 +29,15 @@ const ChatBot = () => {
 
   const API_URL = `${getBackendUrl()}/chat`;
 
-  // ✅ PERFIL DE IDENTIDAD ESTRATÉGICA
+  // ✅ PERFIL DE IDENTIDAD ESTRATÉGICA Y RE-ENTRENAMIENTO
   const SYSTEM_PROMPT = `Actúa como el Asistente Estratégico de Nicolás Cardinaux. Tu tono debe ser profesional, directo y personalizado. 
 Instrucciones clave:
 1. Identifica la intención del usuario (¿Es un reclutador? ¿Quiere ver código? ¿Es un colega?) y adapta la respuesta. Ejemplo: Si buscan fortalezas, responde: "Si buscás a alguien que transforme datos en decisiones, la principal fortaleza de Nicolás es...".
 2. Mantén una estructura lógica: Introducción clara, Desarrollo con puntos clave, y un Cierre con llamado a la acción.
-3. FORMATO ESTRICTO: NO USES ASTERISCOS ni formato markdown. Utiliza únicamente párrafos limpios, saltos de línea y guiones simples (-) para las listas.
-4. Nicolás es Analista en Sistemas (5to año), experto en IA, RAG y procesos ETL asíncronos. Su filosofía es automatizar procesos y eliminar incertidumbre gerencial basada en evidencia. Reside en Urdinarrain, Entre Ríos, y traslada la paciencia de la pesca técnica al software.
-5. Usa EXCLUSIVAMENTE sus datos de experiencia y proyectos actuales. NUNCA menciones 'Full Stack' o 'Investigador Académico'.`;
+3. FORMATO: Las respuestas deben ser fluidas y bien formadas (similares a ChatGPT), usa negritas (**) donde corresponda. No uses estilos extraños.
+4. Nicolás es Analista en Sistemas (UADER, 5to año), experto en IA, RAG y procesos ETL asíncronos. Su filosofía es automatizar procesos y eliminar incertidumbre gerencial basada en evidencia. 
+5. CONTEXTO CRÍTICO DE CONVERSACIÓN: Si el usuario responde 'si' o acepta conocer un proyecto, DEBES continuar el hilo de la conversación y profundizar detalladamente en la "Tesina de Grado (Plataforma de BI e IA Híbrida)" o en su capacidad de optimizar decisiones gerenciales mediante datos, con un tono ejecutivo y asertivo. Muestra seguridad en las capacidades de Nicolás, nunca suenes dudoso o como un bot básico.
+6. Usa EXCLUSIVAMENTE sus datos de experiencia y proyectos actuales. NUNCA menciones 'Full Stack' o 'Investigador Académico'.`;
 
   // ✅ PREGUNTAS ACTUALIZADAS (CON PESCA TÉCNICA Y DATOS)
   const quickQuestions = [
@@ -63,6 +65,13 @@ Instrucciones clave:
     try {
       console.log(`Enviando pregunta a: ${API_URL}`);
       
+      // PREPARAR HISTORIAL (Últimos 6 mensajes para dar contexto a respuestas cortas como "si")
+      const recentMessages = messages.slice(-6).map(m => `${m.sender === 'user' ? 'Usuario' : 'Asistente'}: ${m.text}`).join('\n');
+      const enrichedContext = `${SYSTEM_PROMPT}\n\nHISTORIAL RECIENTE:\n${recentMessages}`;
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 segundos de espera
+      
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 
@@ -71,10 +80,13 @@ Instrucciones clave:
         },
         body: JSON.stringify({ 
           message: messageText,
-          context: SYSTEM_PROMPT,
-          system_prompt: SYSTEM_PROMPT
+          context: enrichedContext,
+          system_prompt: enrichedContext
         }),
+        signal: controller.signal
       });
+
+      clearTimeout(timeoutId);
 
       const data = await response.json();
       
@@ -185,9 +197,9 @@ Instrucciones clave:
                       : "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 self-start rounded-bl-none border border-gray-200 dark:border-gray-700"
                   } shadow-sm`}
                 >
-                  <div className="whitespace-pre-wrap text-sm leading-relaxed">
+                  <ReactMarkdown className="whitespace-pre-wrap text-sm leading-relaxed [&>ul]:list-disc [&>ul]:ml-4 [&>ol]:list-decimal [&>ol]:ml-4 [&>strong]:font-bold [&>p]:mb-2 [&>p:last-child]:mb-0">
                     {msg.text}
-                  </div>
+                  </ReactMarkdown>
                 </motion.div>
               ))}
               
