@@ -64,7 +64,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}>
             Hola, soy <span className="text-primary">Nicolás</span><br/>
             
-            <div className="min-h-[80px] sm:min-h-[40px] flex items-start">
+            <div className="min-h-[120px] sm:min-h-[96px] md:min-h-[88px] lg:min-h-[80px] flex items-start">
               <ReactTyped
                 strings={profile.titles}
                 typeSpeed={40}
